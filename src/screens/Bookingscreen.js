@@ -25,12 +25,9 @@ const Bookingscreen = ({ match }) => {
       try {
         setLoading(true);
         const data = (
-          await axios.post(
-            "https://backendhotel-yqc9.onrender.com/api/rooms/getroombyid",
-            {
-              roomid: roomid,
-            },
-          )
+          await axios.post("/api/rooms/getroombyid", {
+            roomid: roomid,
+          })
         ).data;
         console.log("Rent per day:", data.rentperday);
 
@@ -68,7 +65,7 @@ const Bookingscreen = ({ match }) => {
     try {
       setLoading(true);
       const result = await axios.post(
-        "https://backendhotel-yqc9.onrender.com/api/bookings/bookroom",
+        "/api/bookings/bookroom",
         { ...bookingDetails, token },
         Swal.fire(
           "Congratulations",

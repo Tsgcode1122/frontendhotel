@@ -20,9 +20,7 @@ const Homescreen = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(
-          "https://backendhotel-yqc9.onrender.com/api/rooms/getallrooms",
-        );
+        const response = await axios.get("/api/rooms/getallrooms");
         setRooms(response.data);
         setDuplicaterooms(response.data);
         setLoading(false);

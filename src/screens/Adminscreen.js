@@ -115,9 +115,7 @@ export const Rooms = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(
-          "https://backendhotel-yqc9.onrender.com/api/rooms/getallrooms/",
-        );
+        const response = await axios.get("/api/rooms/getallrooms/");
         console.log(response.data);
         setRooms(response.data);
         setLoading(false);
@@ -178,9 +176,7 @@ export const Users = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(
-          "https://backendhotel-yqc9.onrender.com/api/users/getallusers/",
-        );
+        const response = await axios.get("/api/users/getallusers/");
         console.log(response.data);
         setUsers(response.data);
         setLoading(false);

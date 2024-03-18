@@ -18,7 +18,7 @@ const Resetpassword = () => {
 
       // Check if email exists
       const response = await axios.post(
-        "https://backendhotel-yqc9.onrender.com/api/users/checkemail",
+        "/api/users/checkemail",
         { email },
         setErrorMessage(""),
       );
@@ -47,10 +47,7 @@ const Resetpassword = () => {
         password,
       };
 
-      const result = await axios.post(
-        "https://backendhotel-yqc9.onrender.com/api/users/reset",
-        user,
-      );
+      const result = await axios.post("/api/users/reset", user);
       localStorage.setItem("currentUser", JSON.stringify(result.data));
 
       Swal.fire("", "Password Reset", "success").then((result) => {

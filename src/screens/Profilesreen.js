@@ -47,7 +47,7 @@ export const MyBookings = () => {
       try {
         setLoading(true);
         const response = await axios.post(
-          "https://backendhotel-yqc9.onrender.com/api/bookings/getbookingsbyuserid/",
+          "/api/bookings/getbookingsbyuserid/",
           {
             userid: user._id,
           },
@@ -67,10 +67,10 @@ export const MyBookings = () => {
   const cancelBooking = async (bookingid, roomid) => {
     try {
       setLoading(true);
-      const result = await axios.post(
-        "https://backendhotel-yqc9.onrender.com/api/bookings/cancelbooking",
-        { bookingid, roomid },
-      );
+      const result = await axios.post("/api/bookings/cancelbooking", {
+        bookingid,
+        roomid,
+      });
       console.log("result:", result.data);
       setLoading(false);
       Swal.fire("", "Your room booking has been cancelled", "success").then(

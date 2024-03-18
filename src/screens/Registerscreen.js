@@ -40,7 +40,7 @@ const Registerscreen = () => {
       const user = { name, email, password, confirmpassword };
       setLoading(true);
       const result = await axios.post(
-        "https://backendhotel-yqc9.onrender.com/api/users/register",
+        "https://backendhotel-yqc9.onrender.comd/api/users/register",
         user,
       );
       setLoading(false);
